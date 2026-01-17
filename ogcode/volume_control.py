@@ -2,14 +2,14 @@ import math
 import cv2
 import numpy as np
 import HandTrackingModule as htm
-import KalmanFilter as km
+import filters.KalmanFilter as km
 from pycaw.pycaw import AudioUtilities
 from utils.volume_utils import mcp_angle
 
 device = AudioUtilities.GetSpeakers()
 volume = device.EndpointVolume
-volume_range = volume.GetVolumeRange() 
-min_vol, max_vol = min(volume_range), max(volume_range)
+# volume_range = volume.GetVolumeRange() 
+# min_vol, max_vol = min(volume_range), max(volume_range)
 wCam, hCam = 640, 480
 cap = cv2.VideoCapture(0)
 cap.set(3, wCam)
